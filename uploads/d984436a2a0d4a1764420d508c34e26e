@@ -1,0 +1,4 @@
+ const file = await File.findById(req.params.id);
+    file.downloadCount++;
+    await file.save;
+    res.download(file.path, file.originalName);
